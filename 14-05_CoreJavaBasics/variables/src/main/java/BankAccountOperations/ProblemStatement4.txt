@@ -1,0 +1,12 @@
+Problem 4: Bank Account Operations
+Concepts Covered: All Variable Types
+Description:
+Create a BankAccount class with:
+
+Instance variables: accountNumber, balance
+Static variable: bankName
+Method deposit(double amount):
+Takes parameter
+Uses local variable to calculate new balance
+Method displayAccountDetails() to print all details
+Goal: Integrate all variable types in a real-world scenario.

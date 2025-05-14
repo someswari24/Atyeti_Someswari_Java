@@ -1,0 +1,10 @@
+Problem 2: Temperature Converter
+Concepts Covered: Parameters, Local Variables
+Description:
+Create a class TemperatureConverter with:
+
+Method celsiusToFahrenheit(double celsius) that:
+Takes a parameter
+Uses a local variable to store the result
+Returns the Fahrenheit value
+Goal: Demonstrate how parameters and local variables are used within a method.

@@ -1,0 +1,10 @@
+Problem 3: Employee ID Generator
+Concepts Covered: Static Variables, Final Variables, Instance Variables
+Description:
+Create an Employee class with:
+
+Instance variables: name, employeeId
+Static variable: idCounter to generate unique IDs
+Final variable: companyName = "TechCorp"
+Constructor that assigns a unique ID to each employee
+Goal: Show how static and final variables behave differently from instance variables.

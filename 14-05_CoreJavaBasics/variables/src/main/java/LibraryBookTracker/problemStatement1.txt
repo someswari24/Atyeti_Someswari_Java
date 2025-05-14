@@ -1,0 +1,10 @@
+Problem 1: Library Book Tracker
+Concepts Covered: Instance Variables, Static Variables
+Description:
+Create a Book class with:
+
+Instance variables: title, author, isIssued
+Static variable: totalBooks to track how many books are created
+Constructor to initialize book details and increment totalBooks
+Method issueBook() to mark a book as issued
+Goal: Show how each book has its own state, but all share the same total count.

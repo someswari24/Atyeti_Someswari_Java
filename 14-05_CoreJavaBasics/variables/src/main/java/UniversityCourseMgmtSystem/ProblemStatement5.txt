@@ -1,0 +1,29 @@
+Problem: University Course Management System
+
+Design a system to manage university courses, students, and enrollments using proper use of variables.
+Requirements:
+1. Class: Course
+Instance Variables:courseId (String),courseName (String),maxStudents (int),enrolledStudents (int)
+Static Variable:totalCourses (int) — tracks how many courses have been created
+Final Variable:UNIVERSITY_NAME (String) — set to "Global University"
+Constructor: Initializes course details and increments totalCourses
+Method: enrollStudent() — increases enrolledStudents if not full
+2. Class: Student
+Instance Variables:studentId (String),studentName (String)
+Static Variable:studentCount — auto-incremented ID generator
+Constructor: Assigns unique ID using studentCount
+3. Class: EnrollmentManager
+Method: enroll(Student student, Course course)
+Parameters: Student, Course
+Local Variables: Use to check if enrollment is possible
+Print success or failure message
+
+Expected Output Example:
+Course Created: CS101 - Data Structures
+Course Created: MA101 - Calculus
+Student Registered: Alice (ID: S001)
+Student Registered: Bob (ID: S002)
+Enrolling Alice in CS101... Success!
+Enrolling Bob in CS101... Success!
+Total Courses: 2
+University: Global University
