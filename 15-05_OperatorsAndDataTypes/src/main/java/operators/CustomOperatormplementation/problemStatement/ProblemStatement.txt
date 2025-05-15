@@ -1,0 +1,6 @@
+Custom Operator Implementation
+Java does not support operator overloading.
+Simulate operator overloading by creating a class ComplexNumber that:
+
+1)Overloads the + operator using a method to add two complex numbers.
+2)Overloads the * operator using a method to multiply two complex numbers.
