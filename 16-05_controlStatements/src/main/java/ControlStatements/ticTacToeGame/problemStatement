@@ -1,0 +1,33 @@
+ Console-Based Tic-Tac-Toe Game (2 Players)
+Design and implement a two-player Tic-Tac-Toe game that runs in the console.
+The game should allow two users to take turns placing their marks (X and O) on a 3×3 grid until one player wins or the game ends in a draw.
+
+ Core Requirements:
+
+1)Game Board Representation:
+Use a 3×3 matrix (list of lists or a 1D list with index mapping) to represent the board.
+Display the board after each move in a user-friendly format.
+
+2)Player Turns:
+Player 1 uses X, and Player 2 uses O.
+Prompt the current player to enter their move (row and column or position number).
+Validate the move:
+Ensure the input is within bounds.
+Ensure the chosen cell is not already occupied.
+If invalid, prompt again without switching turns.
+
+3)Game Loop:
+Use a loop to keep the game running until:
+A player wins, or
+The board is full (draw).
+After each move, check for a win or draw condition.
+
+4)Win Conditions:
+A player wins if they have three of their marks in a row, column, or diagonal.
+Use conditionals to check all possible winning combinations.
+
+5)Draw Condition:
+If all cells are filled and no player has won, declare the game a draw.
+6)Game Termination:
+Use break to exit the game loop when a win or draw is detected.
+Display a message announcing the winner or declaring a draw.

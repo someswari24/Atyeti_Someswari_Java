@@ -1,0 +1,30 @@
+Problem Statement: Menu-Driven Math Quiz Game
+Design and implement a console-based math quiz game that allows users to test their arithmetic skills at different levels of difficulty.
+The game should be menu-driven, allowing the user to interactively choose options and navigate through the quiz.
+
+Core Requirements:
+Main Menu Options:
+
+Start Quiz
+View Instructions
+Quit
+Difficulty Levels:
+
+Easy: Simple addition and subtraction
+Medium: Addition, subtraction, and multiplication
+Hard: All four operations (including division).Division should result in whole numbers only.
+
+Quiz Flow:
+
+After selecting a difficulty, the user is presented with a series of randomly generated math problems.
+The user must input their answer for each problem.
+The program should validate the input:
+If the input is not a number, display an error and use continue to skip to the next question.
+If the user types a special keyword like "quit", use return to exit the quiz immediately.
+Scoring System:
+
+Keep track of the number of correct and incorrect answers.
+Display the final score at the end of the quiz session.
+
+Replay Option:
+After completing a quiz, ask the user if they want to play again or return to the main menu.

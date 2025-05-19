@@ -1,0 +1,10 @@
+1. Student Grading System
+Write a program that takes marks in 5 subjects and calculates the average.
+Based on the average, assign a grade:
+
+A: 90–100
+B: 80–89
+C: 70–79
+D: 60–69
+F: <60
+Use if-else or switch to determine the grade and print a message accordingly.

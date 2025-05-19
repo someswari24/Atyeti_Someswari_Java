@@ -1,0 +1,21 @@
+Problem Statement: Login System with Limited Attempts
+Design and implement a console-based login system that simulates user authentication with a fixed number of attempts.
+The system should validate a username and password combination and restrict access after a certain number of failed attempts.
+
+Core Requirements:
+Predefined Credentials:
+
+Store a valid username and password in the program (e.g., username = "admin", password = "1234").
+These values can be hardcoded for simplicity.
+User Input:
+
+Prompt the user to enter their username and password.
+Compare the input with the stored credentials.
+Attempt Limitation:
+
+Allow the user only 3 attempts to enter the correct credentials.
+After each failed attempt, display a message indicating the number of remaining attempts.
+If the user enters the correct credentials, display a success message and exit the loop.
+Termination on Failure:
+
+If the user fails to log in after 3 attempts, display an error message and terminate the program using break.
