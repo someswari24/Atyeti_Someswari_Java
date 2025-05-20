@@ -1,0 +1,8 @@
+2. Online Shopping Cart
+Problem: Simulate an online shopping cart system.
+Concepts: Abstraction, Encapsulation, Polymorphism
+Requirements:
+
+Create classes for Product, Cart, and User.
+Use polymorphism to apply different discount strategies.
+Encapsulate cart operations like addItem(), removeItem(), and checkout().

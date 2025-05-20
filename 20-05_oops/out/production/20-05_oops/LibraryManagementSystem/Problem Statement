@@ -1,0 +1,10 @@
+1. Library Management System
+Problem: Design a system to manage books, members, and borrowing activities in a library.
+Concepts: Classes, Inheritance, Polymorphism, Encapsulation
+
+Requirements:
+
+Create classes for Book, Member, and Librarian.
+Use inheritance to differentiate between StudentMember and FacultyMember.
+Implement methods to borrow and return books.
+Use encapsulation to protect book availability status.
