@@ -1,0 +1,7 @@
+Traffic Light Simulation
+Problem: Simulate a traffic light system using enums.
+Concepts: Enums, Switch-case
+Requirements:
+
+Create an enum TrafficLight with values RED, YELLOW, GREEN.
+Write a method to simulate light changes and display appropriate messages.

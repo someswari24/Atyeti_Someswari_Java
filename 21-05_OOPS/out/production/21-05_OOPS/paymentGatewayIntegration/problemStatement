@@ -1,0 +1,8 @@
+Payment Gateway Integration
+Problem: Design a payment system that supports multiple payment methods.
+Concepts: Interfaces, Polymorphism
+Requirements:
+
+Create an interface PaymentMethod with a method processPayment().
+Implement this interface in classes like CreditCard, PayPal, and UPI.
+Use polymorphism to process payments dynamically.

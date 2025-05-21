@@ -1,0 +1,7 @@
+Order Status Tracker
+Problem: Track the status of an online order using enums.
+Concepts: Enums
+Requirements:
+
+Define an enum OrderStatus with values like PLACED, SHIPPED, DELIVERED, CANCELLED.
+Use this enum in an Order class to update and display order status.

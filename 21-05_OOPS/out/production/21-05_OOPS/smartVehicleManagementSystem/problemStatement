@@ -1,0 +1,30 @@
+Problem Statement: Smart Vehicle Management System
+Objective:
+Design a system to manage different types of smart vehicles (like electric cars, bikes, and trucks)
+with features such as starting, stopping, and displaying vehicle status.
+The system should support multiple vehicle types, each with unique behaviors, and use enums to represent vehicle states.
+
+ Requirements:
+1. Abstract Class: Vehicle
+Fields: make, model, year, vehicleState
+Abstract methods:
+start()
+stop()
+displayInfo()
+2. Enum: VehicleState
+Values: OFF, IDLE, RUNNING, MAINTENANCE
+3. Interface: EcoFriendly
+Method: chargeBattery()
+4. Concrete Classes:
+ElectricCar (inherits Vehicle, implements EcoFriendly)
+ElectricBike (inherits Vehicle, implements EcoFriendly)
+DieselTruck (inherits Vehicle)
+Each class should:
+
+Implement the abstract methods.
+Override chargeBattery() only if it implements EcoFriendly.
+Change vehicleState appropriately in start() and stop() methods.
+5. Main Class: VehicleManager
+Create a list of vehicles.
+Demonstrate polymorphism by calling start(), stop(), and displayInfo() on different vehicle types.
+Use the VehicleState enum to show current status of each vehicle.
