@@ -1,0 +1,6 @@
+Hello world
+Hello, this is a sample text file.
+It contains multiple lines of text.
+This file can be used for various file handling problems.
+Feel free to modify its content as needed.
+Good luck with your practice!

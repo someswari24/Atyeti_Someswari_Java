@@ -1,0 +1,27 @@
+Problem Statement: File Encryption and Decryption
+Objective:
+Develop a Python script that can encrypt the contents of a text file using a
+simple cipher (e.g., Caesar cipher or XOR cipher), and then decrypt it back to its original form.
+
+Requirements:
+Input:A plain text file (e.g., sample_input.txt) containing readable text.
+
+Encryption:
+Read the content of the file.
+Apply a simple encryption algorithm:
+Caesar Cipher: Shift each character by a fixed number of positions in the ASCII table.
+XOR Cipher: XOR each character with a key.
+Save the encrypted content to a new file (e.g., encrypted.txt).
+
+Decryption:
+Read the encrypted file.
+Apply the reverse of the encryption algorithm to retrieve the original content.
+Save the decrypted content to another file (e.g., decrypted.txt).
+
+Validation:
+Ensure that the decrypted file content matches the original input file content.
+
+Bonus Features (Optional):
+Allow the user to choose the encryption method (Caesar or XOR).
+Allow the user to specify the encryption key or shift value.
+Add a simple menu-driven interface for encryption and decryption.
