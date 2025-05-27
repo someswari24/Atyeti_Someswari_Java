@@ -1,0 +1,29 @@
+----------Waste Management Report----------
+
+Total Waste per Zone:
+Z003 : 208.8 kg
+Z002 : 258.6 kg
+Z004 : 205.6 kg
+Z001 : 241.1 kg
+
+Average Waste Per Waste Type 
+Z003 : 17.400000000000002
+Z002 : 19.892307692307693
+Z004 : 18.69090909090909
+Z001 : 17.22142857142857
+
+Zone with highest plastic waste : Plastic----------Waste Management Report----------
+
+Total Waste per Zone:
+Z003 : 208.8 kg
+Z002 : 258.6 kg
+Z004 : 205.6 kg
+Z001 : 241.1 kg
+
+Average Waste Per Waste Type 
+Z003 : 17.400000000000002
+Z002 : 19.892307692307693
+Z004 : 18.69090909090909
+Z001 : 17.22142857142857
+
+Zone with highest plastic waste : Plastic

@@ -1,0 +1,36 @@
+Problem Statement: "SmartCity Waste Management System"
+Objective:
+Design and implement a Java application that simulates a smart city's waste management system. The system should read data from a file,
+process it using collections and streams, handle exceptions gracefully, and generate a report.
+
+Scenario:
+The city collects daily waste data from various zones. Each record contains:
+Zone ID
+Date
+Waste Type (Plastic, Organic, E-Waste, etc.)
+Weight (in kg)
+The data is stored in a CSV file named waste_data.csv.
+
+Requirements:
+File Handling:
+Read the CSV file and parse each line into a WasteRecord object.
+Handle file not found, malformed data, and IO exceptions.
+
+Collections:
+Store the records in a suitable collection (e.g., List<WasteRecord>).
+Use a Map<String, List<WasteRecord>> to group records by zone.
+
+Streams:
+Calculate total waste per zone.
+Find the zone with the highest plastic waste.
+Generate a summary of average waste per type across all zones.
+
+Exception Handling:
+Create custom exceptions like InvalidWasteDataException.
+Handle and log errors without stopping the program.
+
+Output:
+Write a report to a file waste_report.txt with:
+Total waste per zone
+Zone with highest plastic waste
+Average waste per type
