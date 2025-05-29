@@ -1,0 +1,42 @@
+Robust Student Data Processor with Exception Handling
+Objective:
+Design a program that reads student records from a file, validates the data, and processes it to calculate average scores.
+The program must handle various exceptions gracefully using nested and multi-level exception handling, custom exceptions, and logging.
+
+Problem Description:
+You are given a file named students.txt where each line contains a student record in the following format:
+<student_id>,<name>,<score1>,<score2>,<score3>
+
+Example:
+101,John,85,90,78
+102,Alice,88,abc,92
+103,Bob,70,65
+104,,80,85,90
+
+Your program should:
+Read the file and process each line.
+Validate the data:
+Ensure all fields are present.
+Ensure scores are numeric and between 0 and 100.
+Ensure the name is not empty.
+Calculate the average score for each valid student.
+
+Handle exceptions:
+FileNotFoundError if the file is missing.
+ValueError for invalid score conversions.
+IndexError for missing fields.
+A custom exception InvalidStudentDataError for logical validation failures (e.g., empty name, score out of range).
+Log all errors to a file named error_log.txt with timestamps.
+Retry mechanism: If the file is not found, allow the user to retry up to 3 times to enter a correct filename.
+
+Expected Output:
+Processing student records...
+Student ID: 101, Name: John, Average Score: 84.33
+Error in line 2: Invalid score value - abc
+Error in line 3: Missing score fields
+Error in line 4: Name is missing
+
+And error_log.txt might contain:
+[2025-05-29 09:30:00] Line 2: ValueError - could not convert string to float: 'abc'
+[2025-05-29 09:30:01] Line 3: IndexError - list index out of range
+[2025-05-29 09:30:02] Line 4: InvalidStudentDataError - Name is missing
