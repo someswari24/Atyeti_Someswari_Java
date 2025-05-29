@@ -1,0 +1,24 @@
+[2025-05-29 16-36-52] error at line 2: ValueException - Invalid score value - abc
+[2025-05-29 16-36-52] error at line 3: IndexException - missing some fields
+[2025-05-29 16-36-52] error at line 4: InvalidStudentDataException - data is missing
+[2025-05-29 16-36-52] error at line 6: InvalidStudentDataException - Score out of valid range (0-100): 101.0
+[2025-05-29 16-36-52] error at line 7: InvalidStudentDataException - Score out of valid range (0-100): -5.0
+[2025-05-29 16-36-52] error at line 11: InvalidStudentDataException - data is missing
+[2025-05-29 16-36-52] error at line 12: ValueException - Invalid score value - abc
+[2025-05-29 16-36-52] error at line 14: InvalidStudentDataException - Score out of valid range (0-100): 102.0
+[2025-05-29 16-36-52] error at line 15: IndexException - missing some fields
+[2025-05-29 16-36-52] error at line 18: ValueException - Invalid score value - 
+[2025-05-29 16-36-52] error at line 19: ValueException - Invalid score value - abc
+[2025-05-29 16-36-52] error at line 20: IndexException - missing some fields
+[2025-05-29 16-36-52] error at line 23: InvalidStudentDataException - Score out of valid range (0-100): 110.0
+[2025-05-29 16-36-52] error at line 25: ValueException - Invalid score value - abc
+[2025-05-29 16-36-52] error at line 29: ValueException - Invalid score value - invalid
+[2025-05-29 16-36-52] error at line 30: IndexException - missing some fields
+[2025-05-29 16-36-52] error at line 32: ValueException - Invalid score value - abc
+[2025-05-29 16-36-52] error at line 35: InvalidStudentDataException - Score out of valid range (0-100): 101.0
+[2025-05-29 16-36-52] error at line 37: ValueException - Invalid score value - 
+[2025-05-29 16-36-52] error at line 39: IndexException - missing some fields
+[2025-05-29 16-36-52] error at line 40: ValueException - Invalid score value - abc
+[2025-05-29 16-36-52] error at line 45: InvalidStudentDataException - Score out of valid range (0-100): 101.0
+[2025-05-29 16-36-52] error at line 47: ValueException - Invalid score value - 
+[2025-05-29 16-36-52] error at line 49: ValueException - Invalid score value - invalid
