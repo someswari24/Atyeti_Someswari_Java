@@ -1,0 +1,23 @@
+
+What is ConcurrentModificationException and how can it be avoided?
+
+ConcurrentModificationException is thrown when a collection is modified structurally (like adding or removing elements)
+while iterating over it using a fail-fast iterator(A fail-fast iterator is a type of iterator in Java that immediately
+throws a ConcurrentModificationException).
+
+When Does It Occur?
+1. In Multi-threaded Environments
+If:
+Thread A is iterating over a collection
+And Thread B modifies the collection (add/remove)
+Then the iterator may detect this and throw ConcurrentModificationException.
+
+2. Even in Single-threaded Code
+If a collection is modified during iteration using the same thread,
+the iterator detects it and throws the exception.
+
+How to Avoid ConcurrentModificationException
+Option 1: Modify After Iteration
+Option 2: Use Iterator.remove() Instead of list.remove()
+Option 3: Use CopyOnWriteArrayList for Thread-Safe Iteration
+

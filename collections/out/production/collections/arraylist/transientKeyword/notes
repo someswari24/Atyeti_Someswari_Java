@@ -1,0 +1,20 @@
+What is transient in Java?
+
+It's used to prevent a variable from being serialized when an object is written to a stream (i.e., saved to a file or sent over a network).
+
+Why use transient?
+1. Security / Privacy
+      Example: Passwords, bank PINs, or secret keys.
+      When serialized, the password field will not be saved.
+      Upon deserialization, it will be null (default value for String).
+
+ ## transient vs static
+ static fields belong to the class, not the object.
+Serialization only works on object fields, so static fields are never serialized, even if not marked transient.
+Using transient static has no effect, but it compiles fine.
+
+##transient vs final
+final variables are constants, their values are serialized directly.
+Marking a final variable as transient is useless — again, compiles fine, but has no practical effect.
+
+

@@ -1,0 +1,9 @@
+Problem Statement:
+You are building a system that saves user session data to a file. The session includes sensitive information like a password,
+which should not be saved when the object is serialized.
+
+Implement a UserSession class that:
+
+Stores username and password.
+Uses the transient keyword to prevent the password from being serialized.
+Demonstrates serialization and deserialization to show that the password is not saved.

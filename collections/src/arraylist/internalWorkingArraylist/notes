@@ -1,0 +1,18 @@
+Internal Working of ArrayList in Java
+=======================================
+
+ArrayList is a resizable array implementation in Java.
+ArrayList grows dynamically and ensures that there is always a space to add elements.
+The backing data structure of ArrayList is an array of Object classes.
+ArrayList class in Java has 3 constructors.
+It has its own version of readObject and writeObject methods.
+
+Object Array in ArrayList is transient.
+---------------------------------------
+EX:Suppose you create an ArrayList with capacity 10 but add only 2 elements.
+If elementData were not transient,then all 10 slots (8 of them being null) would be serialized unnecessarily.
+That wastes memory and makes serialization slower.
+
+
+took reference from geeks for geeks
+https://www.geeksforgeeks.org/internal-working-of-arraylist-in-java/

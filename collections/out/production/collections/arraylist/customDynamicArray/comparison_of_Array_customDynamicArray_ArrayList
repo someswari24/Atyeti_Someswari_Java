@@ -1,0 +1,37 @@
+Comparison of Array, Arrays (Class), Dynamic Array, and ArrayList in Java
+
+Array:
+- Type: Built-in data structure in Java.
+- Fixed size: Once created, its size cannot change.
+- Syntax: int[] arr = new int[5];
+- Pros: Fast access by index. Simple and efficient.
+- Cons: Size is fixed. No built-in methods for adding/removing elements.
+
+Arrays (Class):
+- Type: Utility class in java.util package.
+- Purpose: Provides static methods to work with arrays.
+- Examples: Arrays.sort(arr); Arrays.toString(arr); Arrays.copyOf(arr, newLength);
+- Note: It’s not a data structure — it’s a helper class for working with arrays.
+
+Dynamic Array:
+- Type: Custom implementation (like your CustomDynamicArray).
+- Resizable: Grows automatically when full.
+- Manual management: You write the logic for resizing, adding, removing, etc.
+- Use case: Learning, customization, or interview practice.
+
+ArrayList:
+- Type: Part of Java Collections Framework (java.util.ArrayList).
+- Resizable: Automatically resizes like a dynamic array.
+- Built-in methods: add(), remove(), contains(), size(), etc.
+- Syntax: ArrayList<Integer> list = new ArrayList<>(); list.add(10);
+- Pros: Easy to use. Well-tested and optimized.
+- Cons: Slightly more overhead than raw arrays.
+
+
+    Feature      Array      Arrays (Class)      DynamicArray        ArrayList
+    ---------   -------     --------------     --------------       --------
+    Resizable       No        N/A               Yes (custom)        Yes
+    Built-in        Yes       Yes               No                  Yes
+    Methods         Limited    Utility          Custom-defined      Rich API
+    Type-safe       Yes         Yes             Yes (if generic)     Yes
+    Use case    Basic storage  Array helpers     Learning/custom     useGeneral-purpose

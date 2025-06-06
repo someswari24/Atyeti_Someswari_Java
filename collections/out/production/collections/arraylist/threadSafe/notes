@@ -1,0 +1,50 @@
+How can you make an ArrayList thread-safe?
+
+we can make arraylist thread safe :
+                    1)By using Collections.synchronizedList()
+                    2)By using CopyOnWriteArrayList
+
+When to Use What?
+
+Use **Collections.synchronizedList** when:
+1)You need frequent writes (add/remove).
+2)You can synchronize explicitly during iteration.
+
+Use **CopyOnWriteArrayList** when:
+1)You have many threads reading and rare modifications.
+2)You want safe iteration without needing synchronization.
+
+Implications of Using ArrayList in a Multithreaded Environment
+--------------------------------------------------------------
+ArrayList is not synchronized, which means:
+
+1)Race Conditions:
+If multiple threads modify (e.g., add/remove elements) concurrently, data corruption or unexpected behavior can occur.
+Example: One thread resizing the internal array while another is adding an element can cause ArrayIndexOutOfBoundsException.
+
+2)Visibility Issues:
+One thread might not see the updated list state if another thread modifies it due to lack of proper memory synchronization.
+
+3)Iterators Are Not Fail-Safe:
+Iterating while modifying the list from another thread leads to ConcurrentModificationException.
+
+
+why do we have to make our array list Thread Safe?
+
+We need to make an ArrayList thread-safe in Java when it is accessed or modified by multiple threads concurrently,
+to avoid data inconsistency, runtime exceptions, and unexpected behavior.
+
+When to Make ArrayList Thread-Safe?
+
+You must make an ArrayList thread-safe when:
+1)Multiple threads write to the list.
+2)A thread reads while another thread modifies it.
+3)The list is shared between threads and is not read-only.
+
+You do not need thread safety if:
+1)The list is confined to a single thread.
+2)You only read from the list after construction (immutable usage).
+
+
+took reference from stack overflow
+https://stackoverflow.com/questions/3589308/arraylist-and-multithreading-in-java

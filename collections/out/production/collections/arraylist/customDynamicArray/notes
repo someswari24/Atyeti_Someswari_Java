@@ -1,0 +1,33 @@
+DYNAMIC ARRAY
+=============
+
+Dynamic arrays in Java in which entries can be added as the array increases its size as it is full.
+The size of the new array increases to double the size of the original array.
+Now all elements are retained in a new array which is in the specified array domain size and the rest
+are added after them in the newly formed array. This array keeps on growing dynamically.
+
+A custom dynamic array is a user-defined data structure that mimics the behavior of Java’s built-in ArrayList.
+Unlike regular arrays in Java (which have a fixed size), a dynamic array can grow or shrink as elements are added or removed.
+It’s called "custom" because you write the logic yourself instead of using Java’s built-in classes.
+
+Why Use a Dynamic Array?
+1.Regular arrays have a fixed size.
+2.Dynamic arrays automatically resize when they run out of space.
+3.They allow flexible storage and manipulation of elements.
+
+How to Implement a Custom Dynamic Array
+1. Create a Class
+2. Define Key Variables
+3. Constructor
+4. Add Elements
+5. Resize the Array
+6. Get and Remove Elements
+
+
+A custom dynamic array:
+*Uses an internal array to store data.
+Automatically resizes when full.
+Supports adding, removing, and accessing elements.
+*Is a great way to understand how ArrayList works internally.
+
+Question:How would you implement a dynamic array from scratch that mimics ArrayList behavior?
