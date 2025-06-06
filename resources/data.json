@@ -1,0 +1,126 @@
+{
+  "company" : "new new comp ltd",
+  "location" : {
+    "country" : "USA",
+    "state" : "California",
+    "city" : "San Francisco",
+    "address" : {
+      "street" : "123 Market St",
+      "zip" : "94105"
+    }
+  },
+  "departments" : [ {
+    "name" : "someswari",
+    "head" : "Alice Johnson",
+    "teams" : [ {
+      "name" : "someswari",
+      "lead" : "Tom Smith",
+      "members" : [ {
+        "name" : "someswari",
+        "experience" : 5
+      }, {
+        "name" : "someswari",
+        "experience" : 3
+      } ]
+    }, {
+      "name" : "someswari",
+      "lead" : "Samantha Lee",
+      "members" : [ {
+        "name" : "someswari",
+        "experience" : 2
+      }, {
+        "name" : "someswari",
+        "experience" : 4
+      } ]
+    } ]
+  }, {
+    "name" : "someswari",
+    "head" : "Robert King",
+    "teams" : [ {
+      "name" : "someswari",
+      "lead" : "Jill White",
+      "members" : [ {
+        "name" : "someswari",
+        "experience" : 6
+      }, {
+        "name" : "someswari",
+        "experience" : 1
+      } ]
+    } ]
+  } ],
+  "founded" : 2010,
+  "active" : true,
+  "technologies" : {
+    "languages" : [ "Java", "Python", "JavaScript" ],
+    "tools" : [ "Git", "Jenkins", "Docker" ],
+    "cloud" : {
+      "provider" : "GCP",
+      "services" : [ "Compute Engine", "Cloud Storage", "BigQuery" ]
+    }
+  },
+  "projects" : [ {
+    "id" : "P005",
+    "name" : "someswari",
+    "status" : "Active",
+    "stack" : {
+      "frontend" : "React",
+      "backend" : "Spring Boot",
+      "database" : "PostgreSQL"
+    },
+    "teamSize" : 6
+  }, {
+    "id" : "P005",
+    "name" : "someswari",
+    "status" : "Completed",
+    "stack" : {
+      "frontend" : "Angular",
+      "backend" : "Node.js",
+      "database" : "MongoDB"
+    },
+    "teamSize" : 4
+  } ],
+  "compliance" : {
+    "ISO27001" : true,
+    "SOC2" : {
+      "type1" : true,
+      "type2" : false
+    }
+  },
+  "feedback" : {
+    "2023" : {
+      "Q1" : 4.5,
+      "Q2" : 4.7,
+      "Q3" : 4.6,
+      "Q4" : 4.8
+    },
+    "2024" : {
+      "Q1" : 4.9
+    }
+  },
+  "partnerships" : [ {
+    "partner" : "CloudX",
+    "startYear" : 2019,
+    "active" : true
+  }, {
+    "partner" : "SecureNet",
+    "startYear" : 2021,
+    "active" : false
+  } ],
+  "announcements" : {
+    "latest" : "Q2 earnings exceed expectations",
+    "next" : "Product launch scheduled for Q3"
+  },
+  "settings" : {
+    "theme" : "dark",
+    "notifications" : {
+      "email" : true,
+      "sms" : false,
+      "push" : {
+        "enabled" : true,
+        "frequency" : "daily"
+      }
+    }
+  },
+  "country" : "New Company Inc",
+  "services" : "new value"
+}
