@@ -1,0 +1,30 @@
+Floyd's cycle finding algorithm
+=================================
+Floyd's cycle algorithm is a pointer algorithm that uses only two pointers,
+moving through the sequence at different speeds.
+This algorithm is used to find a loop in a linked list.
+It uses two pointers one moving twice as fast as the other one.
+The faster one is called the fast pointer and the other one is called the slow pointer.
+
+How It Works
+------------
+Use two pointers:
+slow pointer moves 1 step at a time.
+fast pointer moves 2 steps at a time.
+Start both from the head of the list.
+
+While traversing:
+If fast becomes NULL, no cycle exists.
+If slow and fast meet at any point, a cycle exists.
+
+Why It Works
+-------------
+When slow enters the cycle, fast is already inside.
+With each iteration, the distance between them increases by 1.
+Since they move in a cycle, the distance eventually wraps around, causing them to meet within the loop.
+
+Take reference from:
+https://www.geeksforgeeks.org/floyds-cycle-finding-algorithm/
+
+
+
