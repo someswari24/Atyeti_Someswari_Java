@@ -1,0 +1,99 @@
+[
+
+  {
+
+    "date": "2023-06-12",
+
+    "city": "New York",
+
+    "temperature": 29.5,
+
+    "humidity": 70,
+
+    "condition": "Rainy",
+
+    "windSpeed": 15.2
+
+  },
+
+  {
+
+    "date": "2023-06-13",
+
+    "city": "New York",
+
+    "temperature": 32.0,
+
+    "humidity": 65,
+
+    "condition": "Sunny",
+
+    "windSpeed": 10.0
+
+  },
+
+  {
+
+    "date": "2023-06-12",
+
+    "city": "Los Angeles",
+
+    "temperature": 25.3,
+
+    "humidity": 60,
+
+    "condition": "Cloudy",
+
+    "windSpeed": 5.5
+
+  },
+
+  {
+
+    "date": "2023-06-13",
+
+    "city": "Los Angeles",
+
+    "temperature": 28.1,
+
+    "humidity": 58,
+
+    "condition": "Sunny",
+
+    "windSpeed": 7.2
+
+  },
+
+  {
+
+    "date": "2023-06-12",
+
+    "city": "Chicago",
+
+    "temperature": 20.5,
+
+    "humidity": 75,
+
+    "condition": "Rainy",
+
+    "windSpeed": 20.0
+
+  },
+
+  {
+
+    "date": "2023-06-13",
+
+    "city": "Chicago",
+
+    "temperature": 22.0,
+
+    "humidity": 72,
+
+    "condition": "Cloudy",
+
+    "windSpeed": 18.5
+
+  }
+
+]
