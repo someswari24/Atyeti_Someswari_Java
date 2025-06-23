@@ -1,0 +1,43 @@
+Unified Thread Management System
+Title: Multi-Stage Task Processing with Thread Coordination
+
+Problem Statement:
+Design a Java program that simulates a multi-stage task processing system using multiple threads.
+Each thread represents a worker processing a specific task stage (e.g., Data Collection, Processing, and Reporting).
+
+You must use the following Thread class methods within your program logic:
+Requirements:
+1)Create three threads representing three stages of a workflow:
+CollectorThread: Collects data
+ProcessorThread: Processes data
+ReporterThread: Generates reports
+
+2)Use setName() to assign each thread a meaningful name, and use getName() inside the run() method to print
+which thread is executing.
+
+3)Each thread should:
+Perform its task for 5 iterations
+Print its name and current iteration number
+Pause for 500ms using sleep()
+
+4)On the third iteration, the ProcessorThread must call yield() to let other threads have CPU time.
+
+5)In the main() method:
+Set different priorities to each thread using setPriority()
+Print each thread's priority using getPriority()
+
+6)Start all three threads using start(), and use join() to ensure:
+ReporterThread starts only after ProcessorThread finishes
+ProcessorThread starts only after CollectorThread finishes
+
+7)Use isAlive() to display whether a thread is still active at different stages.
+
+8)After 2 seconds of starting the CollectorThread, interrupt it using interrupt(). The thread must handle InterruptedException and exit gracefully with a message like “Collector interrupted during sleep.”
+
+Objective:
+Demonstrate deep understanding of Java multithreading by:
+Managing thread lifecycle
+Controlling execution order
+Coordinating CPU usage
+Handling interruptions
+Using thread metadata (name, priority, status)
