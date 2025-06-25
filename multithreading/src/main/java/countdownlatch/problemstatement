@@ -1,0 +1,12 @@
+Server Startup
+Imagine you're building a server application that needs to:
+1)Load configuration
+2)Connect to the database
+3)Start the web server
+Only after all 3 tasks complete, should the main server say: "Startup complete".
+
+Using CountDownLatch:
+Each task runs in its own thread.
+The main thread waits using latch.await().
+Each task calls latch.countDown() when done.
+When all 3 tasks are complete, the main thread continues.

@@ -1,0 +1,35 @@
+Problem Statement: Bounded Order Processing System Using ReentrantLock
+Context:
+You are building a bounded order processing system for an e-commerce platform where multiple
+producer threads (customers) place orders,and multiple consumer threads (warehouse workers) process them.
+To ensure thread safety and avoid race conditions, you must use a ReentrantLock.
+
+You are required to implement:
+A fixed-size order queue (like a blocking queue).
+Producer threads that add orders to the queue.
+Consumer threads that remove and process orders.
+The queue must block producers if it's full and block consumers if it’s empty, using Condition objects from ReentrantLock.
+
+Requirements:
+Implement a class OrderQueue that supports:
+void placeOrder(String order) – called by producers.
+String takeOrder() – called by consumers.
+The queue has a fixed capacity (e.g., 5 orders).
+
+Use:
+ReentrantLock for synchronization.
+Condition notFull and Condition notEmpty to handle producer/consumer waits.
+
+Producers should:
+Wait if the queue is full.
+Be notified when a consumer removes an order.
+
+Consumers should:
+Wait if the queue is empty.
+Be notified when a producer adds an order.
+
+Simulate:
+At least 3 producer threads and 2 consumer threads.
+Each producer places 5 orders.
+Each consumer processes any available orders.
+

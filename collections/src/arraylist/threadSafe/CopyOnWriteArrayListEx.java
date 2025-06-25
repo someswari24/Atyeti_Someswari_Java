@@ -8,7 +8,7 @@ public class CopyOnWriteArrayListEx{
 
         Runnable task = () -> {
             for (int i = 0; i < 1000; i++) {
-                list.add(i); // Safe: internally uses a new copy for each modification
+                list.add(i);
             }
         };
 
