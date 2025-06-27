@@ -1,0 +1,14 @@
+SEMAPHORE
+---------
+A Semaphore is a concurrency utility that controls access to a shared resource through the use of permits.
+
+Key Features of Semaphore
+Permits: The number of permits determines how many threads can access the resource simultaneously.
+Acquiring Permits: Threads can acquire permits using the acquire() method. If no permits are available, the thread will block until one is released.
+Releasing Permits: Threads can release permits using the release() method, making them available for other threads.
+Fairness: Semaphores can be configured to follow a first-in-first-out (FIFO) ordering for acquiring permits, ensuring fairness.
+
+WHEN TO USE SEMAPHORE?
+1)You want to limit access to a shared resource.
+2)You want to control concurrency level.
+3)You want to coordinate threads that depend on resource availability.

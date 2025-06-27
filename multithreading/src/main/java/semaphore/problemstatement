@@ -1,0 +1,30 @@
+Parking Lot System with Semaphore
+
+You are tasked with simulating a parking lot that has a limited number of parking spaces — say, 5 spots.
+
+Requirements:
+There are multiple cars (threads) trying to enter the parking lot.
+If a spot is available, a car parks (acquires a permit from the semaphore).
+If the parking lot is full, arriving cars must wait until a spot is free.
+When a car leaves (releases a permit), another waiting car can enter.
+
+Additional Challenge:
+
+When a car parks or leaves, print:
+[Car-X] parked. Spots left: Y
+[Car-X] left. Spots left: Z
+where X is the car number and Y / Z is the number of free spots.
+
+Expected Output Example
+[Car-1] parked. Spots left: 4
+[Car-2] parked. Spots left: 3
+[Car-3] parked. Spots left: 2
+[Car-1] left. Spots left: 3
+[Car-4] parked. Spots left: 2
+...
+Hint for Implementation
+Use Semaphore parkingSpots = new Semaphore(5);
+Each car thread:
+parkingSpots.acquire() before parking.
+Sleeps for a random time to simulate parking duration.
+parkingSpots.release() when leaving.

@@ -1,0 +1,10 @@
+EXCHANGER
+---------
+It enables two threads to swap data at a designated meeting point,
+making it useful in various multithreading scenarios.
+
+Key Features of Exchanger:
+
+1)Thread Synchronization: It blocks both threads until they are ready to exchange objects.
+2)Object Exchange: Each thread provides an object, and the Exchanger swaps them.
+3)Use Cases: Commonly used in producer-consumer patterns, pipeline designs, or scenarios requiring data handoff between threads.

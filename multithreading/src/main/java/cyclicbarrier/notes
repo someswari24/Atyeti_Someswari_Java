@@ -1,0 +1,6 @@
+CYCLIC BARRIER
+--------------
+A CyclicBarrier is a synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point.
+Once all threads have reached the barrier, they can proceed with their execution.What sets the CyclicBarrier apart
+from other synchronization mechanisms like CountDownLatch is its ability to reset and be reused after the barrier is tripped.
+

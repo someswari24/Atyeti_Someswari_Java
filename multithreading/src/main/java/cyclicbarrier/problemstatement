@@ -1,0 +1,24 @@
+Data Aggregation with CyclicBarrier
+You are tasked with building a multi-threaded data aggregation system for a weather monitoring station.
+The station has three sensors:
+1.Temperature Sensor
+2.Wind Speed Sensor
+3.Rainfall Sensor
+
+Each sensor runs in a separate thread and periodically collects data.
+After all three sensors have reported their readings, the system should aggregate the data and print the summary
+(e.g., "Summary: Temp=30°C, Wind=15 km/h, Rain=2 mm").
+
+Requirements:
+Use a CyclicBarrier to ensure that all sensor threads wait until every sensor has provided its reading before generating the summary.
+
+After printing the summary, the sensors should proceed to collect the next round of data (i.e., barrier resets — showing CyclicBarrier's cyclic nature).
+
+Simulate at least 3 cycles of data collection.
+
+Hints
+Create 3 threads, one per sensor.
+Each thread generates random data for its sensor.
+CyclicBarrier's barrier action should aggregate and print the data.
+Use Thread.sleep() to simulate sensor delay.
+
