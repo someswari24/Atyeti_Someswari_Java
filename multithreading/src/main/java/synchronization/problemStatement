@@ -1,0 +1,13 @@
+Problem Statement: Printer Queue Synchronization
+You are designing a shared printer queue system for a small office.
+Multiple employees (represented as threads) want to send print jobs to a shared printer.
+
+Requirements:
+
+Only one thread at a time should access the printer to print a document.
+
+If multiple threads try to print at the same time, they should wait for their turn (no two print jobs should overlap).
+
+Simulate the print job by making the thread sleep for a few seconds (e.g., Thread.sleep(2000)).
+
+Ensure thread safety using synchronization.
