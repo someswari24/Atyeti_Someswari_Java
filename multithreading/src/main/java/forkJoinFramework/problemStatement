@@ -1,0 +1,11 @@
+Problem:
+You are given a large integer array containing 100 million elements.
+Your task is to compute the sum of all elements in this array as efficiently as possible by leveraging parallel processing.
+
+Design and implement a solution using the Fork/Join Framework where:
+The array is recursively divided into smaller subarrays until the subarray size falls below a threshold (e.g., 10,000 elements).
+The sum of each subarray is computed sequentially when below the threshold.
+The partial sums from subtasks are combined to compute the final total sum.
+
+Additional Requirement:
+Compare the performance of your Fork/Join implementation with a sequential approach (single-threaded loop sum).
