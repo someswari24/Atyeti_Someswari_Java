@@ -1,0 +1,10 @@
+Problem:
+You are developing a web crawler that needs to fetch and process data from 1,000 URLs.
+
+Design a solution using ExecutorService where:
+A fixed thread pool is used to manage concurrent HTTP requests.
+Each thread fetches the content of a URL and extracts the title of the webpage.
+The titles are collected and stored in a shared collection (e.g., ConcurrentLinkedQueue or List with proper synchronization).
+
+Additional Requirement:
+Ensure the thread pool shuts down gracefully after all URLs are processed, and handle timeouts or failed requests using Future.

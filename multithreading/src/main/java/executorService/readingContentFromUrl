@@ -1,0 +1,22 @@
+Reading Content from URL
+------------------------
+To read content from a URL, we will use “/” URL in our example:
+
+public void givenURLName_whenUsingURL_thenFileData() {
+    String expectedData = "Baeldung";
+
+    URL urlObject = new URL("/");
+    URLConnection urlConnection = urlObject.openConnection();
+    InputStream inputStream = urlConnection.getInputStream();
+    String data = readFromInputStream(inputStream);
+
+    Assert.assertThat(data, containsString(expectedData));
+}
+
+There are also alternative ways of connecting to a URL.
+Here we used the URL and URLConnection class available in the standard SDK.
+
+Took reference from:https://www.baeldung.com/reading-file-in-java
+
+Note:-If you read data from a URL using file handling techniques in most programming languages (like Python,Java),
+it typically returns the raw content of the resource at that URL.For a standard web page, this means you'll get the HTML source code.
