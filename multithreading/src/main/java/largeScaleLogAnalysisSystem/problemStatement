@@ -1,0 +1,38 @@
+Problem: Large-Scale Log Analysis System
+You are tasked with designing a system to analyze massive server log files (e.g., 10 GB each) distributed across multiple servers.
+The goal is to compute aggregate metrics such as:
+total number of error entries,
+average response time,
+most frequent error code.
+
+The system must:
+CPU-Bound Part (Fork/Join Framework):-
+Each log file is too large to process sequentially efficiently.
+Use the Fork/Join Framework to break the log file into chunks (e.g., lines or blocks of lines).
+Parse each chunk in parallel to:
+count error entries,
+sum response times,
+build intermediate error code frequency maps.
+
+Combine results from subtasks into a final report for that file.
+
+I/O-Bound Part (ExecutorService):-
+Multiple servers host the log files, and you must:
+Use ExecutorService (with a fixed or cached thread pool) to manage downloading or reading these files
+concurrently from different servers (simulate with URLs, SFTP, or file paths).
+
+Each thread is responsible for:
+fetching a log file (or reading it from disk/network),
+passing it to the Fork/Join processor.
+
+System Flow:-
+-----------
+1)ExecutorService fetches N log files concurrently.
+2)For each file, Fork/Join processes the file in parallel, aggregates results.
+3)Final results are merged across files (total errors, overall avg response time, global error code frequencies).
+4)The system shuts down cleanly after processing all files.
+
+Additional Requirements
+Handle failed file downloads with retries or error reporting.
+Measure and compare total processing time against a purely sequential implementation.
+Optionally store results in a database or file.
