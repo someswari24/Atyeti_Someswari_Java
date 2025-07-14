@@ -32,7 +32,8 @@ ProcessorThread starts only after CollectorThread finishes
 
 7)Use isAlive() to display whether a thread is still active at different stages.
 
-8)After 2 seconds of starting the CollectorThread, interrupt it using interrupt(). The thread must handle InterruptedException and exit gracefully with a message like “Collector interrupted during sleep.”
+8)After 2 seconds of starting the CollectorThread, interrupt it using interrupt().
+The thread must handle InterruptedException and exit gracefully with a message like “Collector interrupted during sleep.”
 
 Objective:
 Demonstrate deep understanding of Java multithreading by:
