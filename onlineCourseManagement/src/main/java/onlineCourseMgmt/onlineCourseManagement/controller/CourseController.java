@@ -1,12 +1,16 @@
 package onlineCourseMgmt.onlineCourseManagement.controller;
 
 import lombok.RequiredArgsConstructor;
-import onlineCourseMgmt.onlineCourseManagement.model.*;
-import onlineCourseMgmt.onlineCourseManagement.service.CourseService;
+
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import onlineCourseMgmt.onlineCourseManagement.model.Course;
+import onlineCourseMgmt.onlineCourseManagement.model.Student;
 
 import java.util.List;
+
+import onlineCourseMgmt.onlineCourseManagement.service.CourseService;
 
 @RestController
 @RequestMapping("/api/courses")

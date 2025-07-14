@@ -1,14 +1,16 @@
 package onlineCourseMgmt.onlineCourseManagement.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import onlineCourseMgmt.onlineCourseManagement.model.Course;
 import onlineCourseMgmt.onlineCourseManagement.model.Instructor;
 import onlineCourseMgmt.onlineCourseManagement.model.Student;
-import onlineCourseMgmt.onlineCourseManagement.repository.CourseRepository;
+
 import onlineCourseMgmt.onlineCourseManagement.repository.InstructorRepository;
 import onlineCourseMgmt.onlineCourseManagement.repository.StudentRepository;
-import jakarta.persistence.EntityNotFoundException;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import onlineCourseMgmt.onlineCourseManagement.repository.CourseRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

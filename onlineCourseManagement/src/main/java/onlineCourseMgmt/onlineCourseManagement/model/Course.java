@@ -1,5 +1,6 @@
 package onlineCourseMgmt.onlineCourseManagement.model;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class Course {
 
     @ManyToOne
     @JoinColumn(name = "instructor_id")
-    private Instructor instructor;
+    private onlineCourseMgmt.onlineCourseManagement.model.Instructor instructor;
 
     @ManyToMany
     @JoinTable(
