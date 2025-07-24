@@ -6,6 +6,8 @@ import com.foodDeliveryApplication.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerService {
     @Autowired
@@ -20,6 +22,10 @@ public class CustomerService {
     }
 
     public Customer get(Long id){
-        return customerRepository.findById(id).orElseThrow();
+        return customerRepository.findById(id).orElseThrow(()->new RuntimeException("customer not found"));
+    }
+
+    public List<Customer> getAll() {
+        return customerRepository.findAll();
     }
 }

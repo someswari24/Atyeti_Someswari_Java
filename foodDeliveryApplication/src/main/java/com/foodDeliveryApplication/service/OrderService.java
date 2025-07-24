@@ -38,7 +38,7 @@ public class OrderService {
         List<String> itemList=new ArrayList<>();
 
         for (OrderItemRequestDTO item:orderRequest.items){
-            MenuItem menuItem = menuItemRepository.findById(item.menuItemId).orElseThrow();
+            MenuItem menuItem = menuItemRepository.findById(item.menuItemId).orElseThrow(()->new RuntimeException("order is not found"));
             OrderItem orderItem=new OrderItem();
 
             orderItem.setMenuItem(menuItem);

@@ -18,7 +18,7 @@ public class MenuItemService {
     private RestaurantRepository restaurantRepository;
 
     public MenuItem add(MenuItemDTO menuItemDTO){
-        Restaurant restaurant=restaurantRepository.findById(menuItemDTO.restaurantId).orElseThrow(null);
+        Restaurant restaurant=restaurantRepository.findById(menuItemDTO.restaurantId).orElseThrow(()->new RuntimeException("Item not found"));
         MenuItem menuItem=new MenuItem();
         menuItem.setName(menuItemDTO.name);
         menuItem.setPrice(menuItemDTO.price);
@@ -30,5 +30,9 @@ public class MenuItemService {
     public List<MenuItem> getByRestaurant(Long id) {
         return menuItemRepository.findAll().stream()
                 .filter(m -> m.getRestaurant().getId().equals(id)).toList();
+    }
+
+    public List<MenuItem> getAll() {
+        return menuItemRepository.findAll();
     }
 }

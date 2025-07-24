@@ -24,4 +24,9 @@ public class MenuItemController {
         return menuItemService.getByRestaurant(id);
     }
 
+    @GetMapping
+    public List<MenuItem> getAll() {
+        return menuItemService.getAll();
+    }
+
 }

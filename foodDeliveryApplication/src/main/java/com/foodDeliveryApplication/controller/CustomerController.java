@@ -6,6 +6,8 @@ import com.foodDeliveryApplication.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -20,6 +22,11 @@ public class CustomerController {
     @GetMapping("/{id}")
     public Customer get(@PathVariable Long id) {
         return service.get(id);
+    }
+
+    @GetMapping
+    public List<Customer> getAll() {
+        return service.getAll();
     }
 }
 
