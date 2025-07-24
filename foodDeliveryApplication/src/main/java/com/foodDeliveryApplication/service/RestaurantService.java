@@ -6,6 +6,8 @@ import com.foodDeliveryApplication.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RestaurantService {
     @Autowired
@@ -17,5 +19,9 @@ public class RestaurantService {
         restaurant.setAddress(restaurantDTO.address);
 
         return restaurantRepository.save(restaurant);
+    }
+
+    public List<Restaurant> getAll() {
+        return restaurantRepository.findAll();
     }
 }

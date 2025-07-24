@@ -1,9 +1,6 @@
 package com.foodDeliveryApplication.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -19,6 +16,6 @@ public class Customer {
     private String name;
     private String phoneNumber;
 
-    @ManyToOne
-    private List<Order> orders= new ArrayList<>();
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Order> orders;
 }

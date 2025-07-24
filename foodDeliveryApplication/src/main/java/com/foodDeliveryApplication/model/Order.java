@@ -1,6 +1,7 @@
 package com.foodDeliveryApplication.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,18 +9,19 @@ import java.util.List;
 @Data
 @Entity
 public class Order {
-    @Id @GeneratedValue
-    private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private OrderStatus status;
+    @Id
+    @GeneratedValue
+    private Long id;
 
     @ManyToOne
     private Customer customer;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<OrderItem> items = new ArrayList<>();
 
-    private double totalPrice;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
+    private double totalPrice;
 }

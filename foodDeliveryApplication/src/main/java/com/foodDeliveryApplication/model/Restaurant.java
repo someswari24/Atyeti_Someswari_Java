@@ -1,9 +1,6 @@
 package com.foodDeliveryApplication.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -19,7 +16,7 @@ public class Restaurant {
     private String name;
     private String address;
 
-    @OneToMany(mappedBy = "restaurant")
-    private List<MenuItem> menuItems=new ArrayList<>();
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
+    private List<MenuItem> menuItems;
 
 }
