@@ -4,6 +4,7 @@ import com.example.carrental.model.Payment;
 import com.example.carrental.model.Rental;
 import com.example.carrental.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +13,12 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PaymentService {
     private final PaymentRepository paymentRepository;
 
     public Payment makePayment(Payment payment){
+        log.info("Making Payment :"+payment.getMethod());
         return paymentRepository.save(payment);
     }
 

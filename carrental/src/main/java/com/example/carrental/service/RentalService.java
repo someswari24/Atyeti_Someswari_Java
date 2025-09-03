@@ -7,6 +7,7 @@ import com.example.carrental.model.enums.RentalStatus;
 import com.example.carrental.repository.RentalRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class RentalService {
     private final RentalRepository rentalRepository;
 
@@ -24,7 +26,7 @@ public class RentalService {
                 rental.getCar(),rental.getStartDate(),rental.getEndDate()
         );
         if (!conflicts.isEmpty()){
-            throw new RuntimeException("Car already booked for the given dates");
+            log.error("Car already booked for the given dates");
         }
         rental.setStatus(RentalStatus.BOOKED);
         return rentalRepository.save(rental);

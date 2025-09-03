@@ -4,17 +4,20 @@ import com.example.carrental.model.Branch;
 import com.example.carrental.model.Car;
 import com.example.carrental.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class CarService {
     private final CarRepository carRepository;
 
     public Car addCar(Car car){
+        log.info("Adding Car :"+car.getModel());
         return carRepository.save(car);
     }
 
