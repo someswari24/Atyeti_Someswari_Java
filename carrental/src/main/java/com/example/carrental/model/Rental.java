@@ -18,9 +18,10 @@ public class Rental {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(optional=false)
+    @ManyToOne(optional = false)
     private User user;
-    @OneToOne(optional=false)
+
+    @ManyToOne(optional = false)
     private Car car;
 
     private LocalDate startDate;

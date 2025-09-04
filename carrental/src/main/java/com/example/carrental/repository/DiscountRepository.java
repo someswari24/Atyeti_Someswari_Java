@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface DiscountRepository extends JpaRepository<Discount,Long> {
     Optional<Discount> findByCode(String code);
 
-    @Query("SELECT d FROM Discount d WHERE d.expiryDate >= :today")
+    @Query("SELECT d FROM Discount d WHERE d.validTo >= :today")
     List<Discount> findActiveDiscounts(LocalDate today);
 
 }

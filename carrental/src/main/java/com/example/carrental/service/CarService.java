@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -34,6 +35,16 @@ public class CarService {
             car.setAvailable(available);
             carRepository.save(car);
         });
+    }
+
+    public Optional<Car> getCarById(Long id) {
+        log.info("Fetching car by id:"+ id);
+        return carRepository.findById(id);
+    }
+
+    public void deleteCar(Long id) {
+        log.warn("Deleting car with id:"+id);
+        carRepository.deleteById(id);
     }
 
     public List<Car>getAllCars(){

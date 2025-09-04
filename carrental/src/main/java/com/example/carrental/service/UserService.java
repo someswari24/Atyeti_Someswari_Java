@@ -1,6 +1,7 @@
 package com.example.carrental.service;
 
 import com.example.carrental.model.User;
+import com.example.carrental.model.enums.Role;
 import com.example.carrental.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +30,7 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
-    public List<User> findUsersByRole(String role){
+    public List<User> findUsersByRole(Role role){
         return userRepository.findUsersByRole(role);
     }
 

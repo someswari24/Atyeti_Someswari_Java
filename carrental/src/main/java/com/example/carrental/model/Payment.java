@@ -16,13 +16,15 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(optional=false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "rental_id", nullable = false)
     private Rental rental;
+
     private Double amount;
     private String method;
     @Enumerated(EnumType.STRING)
     private PaymentStatus status;
 
-    private LocalDateTime timestamp;
+    private LocalDateTime timestamp= LocalDateTime.now();;
 
 }
