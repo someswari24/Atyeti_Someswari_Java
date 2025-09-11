@@ -30,7 +30,6 @@ public class InvoiceController {
         return ResponseEntity.ok(savedInvoice);
     }
 
-
     @PostMapping("/by-rental")
     public ResponseEntity<Invoice> findByRental(@RequestBody Rental rental) {
         Optional<Invoice> invoice = invoiceService.findByRental(rental);
