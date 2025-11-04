@@ -4,7 +4,6 @@ import com.smartHomeAutomationSystem.entity.Notification;
 import com.smartHomeAutomationSystem.entity.User;
 import com.smartHomeAutomationSystem.enums.NotificationType;
 import com.smartHomeAutomationSystem.repository.NotificationRepository;
-import com.smartHomeAutomationSystem.websocket.WebSocketNotificationHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

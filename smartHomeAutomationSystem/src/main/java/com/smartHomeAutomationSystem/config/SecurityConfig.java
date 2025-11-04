@@ -1,4 +1,3 @@
-// src/main/java/com/smartHomeAutomationSystem/config/SecurityConfig.java
 package com.smartHomeAutomationSystem.config;
 
 import com.smartHomeAutomationSystem.security.JwtAuthenticationFilter;

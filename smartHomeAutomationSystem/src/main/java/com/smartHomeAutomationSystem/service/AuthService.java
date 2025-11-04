@@ -1,6 +1,7 @@
 package com.smartHomeAutomationSystem.service;
 
 import com.smartHomeAutomationSystem.dto.request.*;
+import com.smartHomeAutomationSystem.dto.response.JwtResponse;
 import com.smartHomeAutomationSystem.entity.*;
 import com.smartHomeAutomationSystem.enums.RoleType;
 import com.smartHomeAutomationSystem.exception.InvalidCredentialsException;
@@ -78,7 +79,7 @@ public class AuthService {
                 .id(user.getId())
                 .username(user.getUsername())
                 .email(user.getEmail())
-                .roles(user.getRoles().stream().map(r -> r.getName().name()).toList())
+                .roles(user.getRoles().stream().map(r -> r.getName()).toList())
                 .build();
     }
 }
