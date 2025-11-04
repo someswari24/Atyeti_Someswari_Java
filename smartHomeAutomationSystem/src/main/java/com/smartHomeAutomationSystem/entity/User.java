@@ -46,8 +46,5 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Notification> notifications = new ArrayList<>();
 
-    public User(Long id, Object o, Object o1, Object o2, Object o3) {
-
-    }
 }
 
