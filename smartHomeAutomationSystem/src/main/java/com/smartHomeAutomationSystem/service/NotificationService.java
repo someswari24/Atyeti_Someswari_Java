@@ -16,7 +16,6 @@ import java.util.List;
 public class NotificationService {
 
     private final NotificationRepository notificationRepository;
-    private final WebSocketNotificationHandler webSocketHandler;
 
     public List<Notification> getNotificationsByUser(Long userId) {
         return notificationRepository.findByUserId(userId);
@@ -32,9 +31,7 @@ public class NotificationService {
                 .read(false)
                 .build();
 
-        Notification saved = notificationRepository.save(notification);
-        webSocketHandler.sendToUser(userId.toString(), saved);
-        return saved;
+        return notificationRepository.save(notification);
     }
 
     public void createSecurityAlert(String deviceId, String alertMessage) {

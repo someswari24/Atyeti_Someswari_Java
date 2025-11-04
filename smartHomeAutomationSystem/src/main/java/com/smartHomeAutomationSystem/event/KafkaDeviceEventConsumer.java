@@ -1,10 +1,10 @@
 package com.smartHomeAutomationSystem.event;
 
 import com.smartHomeAutomationSystem.config.KafkaConfig;
-import com.smartHomeAutomationSystem.service.AutomationRuleService;
+import com.smartHomeAutomationSystem.entity.Device;
+import com.smartHomeAutomationSystem.enums.DeviceStatus;
 import com.smartHomeAutomationSystem.service.DeviceLogService;
 import com.smartHomeAutomationSystem.service.DeviceService;
-import com.smartHomeAutomationSystem.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -16,50 +16,48 @@ import org.springframework.stereotype.Service;
 public class KafkaDeviceEventConsumer {
 
     private final DeviceService deviceService;
-    private final AutomationRuleService automationRuleService;
-    private final NotificationService notificationService;
     private final DeviceLogService deviceLogService;
 
-    @KafkaListener(topics = KafkaConfig.DEVICE_STATUS_TOPIC, groupId = "sihas-group")
-    public void handleDeviceStatus(DeviceStatusEvent event) {
-        log.info("Consumed device status: {}", event);
-        try {
-            deviceService.updateDeviceStatusFromEvent(event);
-            deviceLogService.logDeviceEvent(
-                    Long.parseLong(event.getDeviceId()),
-                    "Status updated to: " + event.getStatus()
-            );
-        } catch (Exception e) {
-            log.error("Error processing device status event", e);
-        }
-    }
+    @KafkaListener(
+            topics = KafkaConfig.DEVICE_STATUS_TOPIC,
+            groupId = "sihas-group")
+    public void handleDeviceCommand(DeviceCommandEvent event) {
+        log.info("Received command for device {}: {} with payload: {}",
+                event.getDeviceId(), event.getCommand(), event.getPayload());
 
-    @KafkaListener(topics = KafkaConfig.TEMPERATURE_SENSOR_TOPIC, groupId = "sihas-group")
-    public void handleTemperatureReading(TemperatureReadingEvent event) {
-        log.info("Consumed temperature reading: {}", event);
         try {
-            automationRuleService.evaluateTemperatureRules(event.getDeviceId(), event.getTemperature());
-            deviceLogService.logDeviceEvent(
-                    Long.parseLong(event.getDeviceId()),
-                    "Temperature: " + event.getTemperature() + "°C"
-            );
-        } catch (Exception e) {
-            log.error("Error processing temperature event", e);
-        }
-    }
+            Long deviceId = Long.parseLong(event.getDeviceId());
+            Device device = deviceService.findById(deviceId);
 
-    @KafkaListener(topics = KafkaConfig.SECURITY_ALERTS_TOPIC, groupId = "sihas-group")
-    public void handleSecurityAlert(SecurityAlertEvent event) {
-        log.warn("Consumed security alert: {}", event);
-        try {
-            notificationService.createSecurityAlert(event.getDeviceId(), event.getMessage());
-            deviceLogService.logDeviceEvent(
-                    Long.parseLong(event.getDeviceId()),
-                    "Security alert: " + event.getMessage()
-            );
+            String command = event.getCommand().toUpperCase();
+            DeviceStatus newStatus = null;
+
+            switch (command) {
+                case "TURN_ON":
+                    newStatus = DeviceStatus.ON;
+                    break;
+                case "TURN_OFF":
+                    newStatus = DeviceStatus.OFF;
+                    break;
+                case "SET_TEMP":
+                    log.debug("SET_TEMP command received for device {}. Payload: {}", deviceId, event.getPayload());
+                    deviceLogService.logDeviceEvent(deviceId, "Temperature command processed: " + event.getPayload());
+                    return;
+                default:
+                    log.warn("Unsupported command: {}", command);
+                    deviceLogService.logDeviceEvent(deviceId, "Unsupported command: " + command);
+                    return;
+            }
+
+            device.setStatus(newStatus);
+            deviceService.save(device);
+
+            deviceLogService.logDeviceEvent(deviceId, "Command executed: " + command + " → Status set to " + newStatus);
+
+        } catch (NumberFormatException e) {
+            log.error("Invalid device ID in command: {}", event.getDeviceId(), e);
         } catch (Exception e) {
-            log.error("Error processing security alert", e);
+            log.error("Error handling device command: {}", event, e);
         }
     }
-    
 }

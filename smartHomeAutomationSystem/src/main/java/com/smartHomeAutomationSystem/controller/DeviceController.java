@@ -5,8 +5,10 @@ import com.smartHomeAutomationSystem.dto.response.ApiResponse;
 import com.smartHomeAutomationSystem.dto.response.DeviceResponse;
 import com.smartHomeAutomationSystem.entity.Device;
 import com.smartHomeAutomationSystem.entity.DeviceLog;
+import com.smartHomeAutomationSystem.entity.Room;
 import com.smartHomeAutomationSystem.service.DeviceLogService;
 import com.smartHomeAutomationSystem.service.DeviceService;
+import com.smartHomeAutomationSystem.service.RoomService;
 import com.smartHomeAutomationSystem.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,7 @@ import java.util.stream.Collectors;
 public class DeviceController {
 
     private final DeviceService deviceService;
+    private final RoomService roomService;
     private final UserService userService;
 
     private final DeviceLogService deviceLogService;
@@ -70,15 +73,20 @@ public class DeviceController {
     public ResponseEntity<ApiResponse> addDevice(
             @AuthenticationPrincipal CustomUserDetails userDetails,
             @RequestBody DeviceRequest request) {
-        Device device = new Device();
-        device.setName(request.getName());
-        device.setType(request.getType());
-        device.setStatus(request.getStatus());
-        device.setLocation(request.getLocation());
-        device.setOwner(userService.findById(userDetails.getId()));
-        if (request.getRoomId() != null) {
+        User owner = userService.findById(userDetails.getId());
+        Device device = Device.builder()
+                .name(request.getName())
+                .type(request.getType())
+                .status(request.getStatus())
+                .location(request.getLocation())
+                .owner(owner)
+                .build();
 
+        if (request.getRoomId() != null) {
+            Room room = roomService.findById(request.getRoomId());
+            device.setRoom(room);
         }
+
         deviceService.save(device);
         return ResponseEntity.ok(new ApiResponse(true, "Device added", null));
     }

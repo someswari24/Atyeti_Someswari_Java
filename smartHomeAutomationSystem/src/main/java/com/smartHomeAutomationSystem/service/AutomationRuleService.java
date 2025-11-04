@@ -1,11 +1,13 @@
 package com.smartHomeAutomationSystem.service;
 
 import com.smartHomeAutomationSystem.entity.AutomationRule;
+import com.smartHomeAutomationSystem.entity.Device;
 import com.smartHomeAutomationSystem.enums.AutomationAction;
 import com.smartHomeAutomationSystem.event.DeviceCommandEvent;
 import com.smartHomeAutomationSystem.event.KafkaDeviceEventProducer;
 import com.smartHomeAutomationSystem.event.TemperatureReadingEvent;
 import com.smartHomeAutomationSystem.repository.AutomationRuleRepository;
+import com.smartHomeAutomationSystem.repository.DeviceRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,7 @@ import java.util.Map;
 public class AutomationRuleService {
 
     private final AutomationRuleRepository ruleRepository;
+    private final DeviceRepository deviceRepository;
     private final KafkaDeviceEventProducer kafkaProducer;
 
     public void evaluateTemperatureRules(String deviceId, double temperature) {
@@ -97,9 +100,10 @@ public class AutomationRuleService {
     }
 
     public List<AutomationRule> getRulesByUser(Long userId) {
-        return ruleRepository.findByUserId(userId);
+        List<Device> devices = deviceRepository.findByOwnerId(userId);
+        List<Long> deviceIds = devices.stream().map(Device::getId).toList();
+        return ruleRepository.findByDeviceIdIn(deviceIds);
     }
-
     public List<AutomationRule> getRulesByDevice(Long deviceId) {
         return ruleRepository.findByDeviceId(deviceId);
     }
