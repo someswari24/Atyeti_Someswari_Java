@@ -40,7 +40,7 @@ public class AuthService {
             throw new UserAlreadyExistsException("Username already taken: " + request.getUsername());
         }
 
-        Role userRole = roleRepository.findByName(RoleType.USER)
+        Role userRole = roleRepository.findByName(RoleType.USER.name())
                 .orElseThrow(() -> new RuntimeException("USER role not found"));
 
         Set<Role> roles = new HashSet<>();

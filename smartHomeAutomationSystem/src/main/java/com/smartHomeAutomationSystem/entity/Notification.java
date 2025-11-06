@@ -26,6 +26,7 @@ public class Notification {
 
     private LocalDateTime timestamp;
 
+    @Column(name = "is_read", nullable = false)
     private boolean read;
 
     @ManyToOne

@@ -32,7 +32,6 @@ public class KafkaDeviceCommandConsumer {
             } else if ("TURN_OFF".equals(cmd)) {
                 device.setStatus(DeviceStatus.OFF);
             } else if ("SET_TEMP".equals(cmd)) {
-                // Optional: add thermostat logic later
                 log.debug("Temperature command ignored in consumer (simulation only)");
             } else {
                 log.warn("Unsupported command: {}", cmd);

@@ -15,7 +15,7 @@ public class RoomService {
     private final RoomRepository roomRepository;
 
     public List<Room> getRoomsByUser(Long userId) {
-        return roomRepository.findByUserId(userId);
+        return roomRepository.findByOwner_Id(userId);
     }
 
     public Room findById(Long id) {

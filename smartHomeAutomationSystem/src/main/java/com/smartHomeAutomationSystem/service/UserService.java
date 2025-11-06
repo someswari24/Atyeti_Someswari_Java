@@ -54,7 +54,7 @@ public class UserService {
     @Transactional
     public void assignRoleToUser(Long userId, RoleType roleType) {
         User user = findById(userId);
-        Role role = roleRepository.findByName(roleType)
+        Role role = roleRepository.findByName(roleType.name())
                 .orElseThrow(() -> new RuntimeException("Role not found: " + roleType));
         user.getRoles().add(role);
         userRepository.save(user);

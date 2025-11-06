@@ -25,6 +25,7 @@ public class AutomationRule {
     @JoinColumn(name = "device_id")
     private Device device;
 
+    @Column(name = "rule_condition")
     private String condition;
 
     @Enumerated(EnumType.STRING)

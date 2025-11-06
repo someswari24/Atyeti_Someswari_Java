@@ -1,5 +1,4 @@
 package com.smartHomeAutomationSystem.security;
-
 import com.smartHomeAutomationSystem.entity.User;
 import com.smartHomeAutomationSystem.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
