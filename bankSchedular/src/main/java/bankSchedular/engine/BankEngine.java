@@ -116,4 +116,7 @@ public class BankEngine {
         }
     }
 
+    public List<LedgerEntry> snapshotLedger() {
+        return new ArrayList<>(ledger);
+    }
 }
