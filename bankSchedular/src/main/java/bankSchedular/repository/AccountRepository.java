@@ -15,6 +15,9 @@ public class AccountRepository {
         accounts.put(accountId,account);
         return account;
     }
+    public void save(Account account) {
+        accounts.put(account.getAccountId(), account);
+    }
 
     public Account find(String accountId){
         return accounts.get(accountId);
